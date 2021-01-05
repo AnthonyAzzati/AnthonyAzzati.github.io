@@ -1,0 +1,15 @@
+body{
+    height: 100%;
+}
+
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.merriweather{ 
+    font-family: 'Merriweather', serif;
+}
+
+.active {
+    display: block;
+}   
