@@ -1,7 +1,7 @@
-let hamburger = document.getElementById('hamburgerbtn');
+let menuBtn = document.getElementById('menuBtn');
 
 let mobileMenu = document.getElementById('mobileMenu');
 
-hamburger.addEventListener('click', function(){
+menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
 });
