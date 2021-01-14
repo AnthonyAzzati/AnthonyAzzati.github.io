@@ -11,25 +11,103 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles/style.css">
+</head>
+
 <body>
-    <section class="flex flex-col h-screen bg-gray-600">
-        <header class="container mx-auto p-5 merriweather text-white">
+    <section class="flex flex-col bg-platinum">
+        <header class="container mx-auto p-3 merriweather oxford font-medium">
             <nav class="flex flex-col md:flex-row md:justify-between">
-                <div class="flex flex-row justify-between ">
-                    <a href="index.html" class="my-auto w-auto uppercase text-2xl cursor-pointer">Orinocam</a>
-                    <p id="hamburgerbtn" class="md:hidden ">
+                <div class="flex flex-row justify-between">
+                    <a href="index.html" class="my-auto w-auto uppercase text-2xl montserrat cursor-pointer hover:text-yellow-500 transition">Orinocam</a>
+                    <p id="menuBtn" class="md:hidden">
                         <i class="fas fa-bars fa-2x cursor-pointer"></i>
                     </p>
                 </div>
-                <ul class="hidden md:flex md:flex-row text-center" id="mobileMenu">
-                    <li class="py-4 md:pr-5 uppercase text-xl cursor-pointer"><a>Accueil</a></li>
-                    <li class="py-4 md:pr-5 uppercase text-xl cursor-pointer"><a>Nos produits</a></li>
-                    <li class="py-4 md:pr-5 uppercase text-xl cursor-pointer"><a>Mon panier <i class="fas fa-shopping-cart"></i></a></li>
+                <ul class="hidden md:flex md:flex-row text-center transition" id="mobileMenu">
+                    <li class="py-4 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition">
+                        <a href="index.html">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="py-4 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition">
+                        <a href="./views/playground.html">
+                            Nos produits
+                        </a>
+                    </li>
+                    <li class="py-4 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition">
+                        <a href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
     </section>
+
+    <div class="w-full h-screen">
+        <div class="flex flex-col justify-between h-screen bg-cover bg-center" style=" background-image: url(https://images.unsplash.com/photo-1553426522-ea5e8da2a181?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);">
+            <h1 class="text-center pt-6 px-4 text-white montserrat text-3xl md:pt-18 xl:pt-16 xl:px-20">
+                Vous cherchez un appareil photo vintage, nous avons celui qu'il vous faut.
+            </h1>
+            <div class="flex self-center text-center align-middle bg-black rounded-full ring-2 ring-white text-white hover:bg-white hover:text-black animate-pulse transition w-auto p-2 mb-36">
+                <a href="./views/playground.html" class="uppercase montserrat font-bold">Découvrez nos produits</a>
+            </div>
+        </div>
+    </div>
     
+    <footer class="bg-oxford">
+        <div class="container mx-auto p-4 montserrat platinum text-xs md:flex-row md:justify-around">
+            <div class="flex flex-col md:text-center">
+                <ul class="uppercase flex flex-col lg:flex-row md:justify-center">
+                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
+                        <a href="./views/playground.html">
+                            Découvrez nos produits
+                        </a>
+                    </li>
+                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
+                        <a href="#">
+                            Conditions générales de vente
+                        </a>
+                    </li>
+                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
+                        <a href="#">
+                            Politique de confidentialité
+                        </a>
+                    </li>
+                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
+                        <a href="#">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="pb-1 hover:text-yellow-500 transition">
+                        <a href="#">
+                            Contactez-nous
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="py-2 md:py-4">
+                    <h3>Suivez-nous sur nos réseaux !</h3>
+                    <a href="#">
+                        <i class="fab fa-facebook-square fa-2x mr-2 hover:text-yellow-500 transition"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-twitter-square fa-2x mr-2 hover:text-yellow-500 transition"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram-square fa-2x hover:text-yellow-500 transition"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="flex pt-2 md:justify-center">
+                <p class="">
+                    <span class="uppercase">Orinocam</span> | © 2021 Tous droits réservés
+                </p>
+            </div>
+        </div>
+    </footer>
+        
+        
     <script src="../js/script.js"></script>
 </body>
 </html>
