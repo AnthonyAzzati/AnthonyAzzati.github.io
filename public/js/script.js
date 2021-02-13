@@ -1,12 +1,7 @@
 "use strict"
 
-let menuBtn     = document.getElementById('menuBtn')        
-let mobileMenu  = document.getElementById('mobileMenu')     
-
-// Lors du clic de l'utilisateur (sur smartphone), le menu apparaît et disparaît
-menuBtn.addEventListener('click', () => {                                       
-    mobileMenu.classList.toggle('active')
-})
+let navbar = new Navbar()
+navbar.toggleMenu()
 
 
 
