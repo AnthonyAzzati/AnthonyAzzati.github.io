@@ -18,6 +18,7 @@ class Products {
             this.product = data
             console.log(this.product)
             this.getProducts()
+            this.showLenses()
         })
         .catch(error => {
             console.log(error)
@@ -52,4 +53,20 @@ class Products {
             `
         }
     }
+
+    showLenses() {
+        for (let i = 0; i < this.product.length; i++) {
+            for (let i = 0; i < this.product[i].lenses[i].length; i++) {
+                this.lenses[i].innerHTML +=
+                `
+                <select name="objectifs">
+                    <option value="${this.product.lenses[i]}" class="montserrat" selected>
+                        ${this.product.lenses[i]}
+                    </option>
+                </select>
+                `
+            }
+        }
+    }
+    
 }
