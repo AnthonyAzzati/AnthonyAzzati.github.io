@@ -18,7 +18,7 @@ class Products {
             this.product = data
             console.log(this.product)
             this.getProducts()
-            this.showLenses()
+            // this.showLenses()
         })
         .catch(error => {
             console.log(error)
@@ -54,6 +54,7 @@ class Products {
         }
     }
 
+    /*
     showLenses() {
         for (let i = 0; i < this.product.length; i++) {
             for (let i = 0; i < this.product[i].lenses[i].length; i++) {
@@ -68,5 +69,5 @@ class Products {
             }
         }
     }
-    
+    */
 }
