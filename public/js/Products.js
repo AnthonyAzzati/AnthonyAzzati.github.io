@@ -2,7 +2,7 @@
 
 class Products {
     constructor() {
-        this.product   
+        this.product
         this.productDetails = document.getElementById('product-details')
         this.lenses = document.getElementById('lenses')
         this.moreDetails = document.getElementById('moreDetails')
@@ -45,6 +45,8 @@ class Products {
                             ${this.product[i].description}
                         </p>
                         <label for="Choisir un objectif" class="py-2" id="lenses">
+                            <select name="objectifs">
+                            </select>
                         </label>
                         <div class="flex flex-row justify-between items-center mt-2">
                             <h3 class="text-xl font-medium merriweather">
@@ -67,7 +69,7 @@ class Products {
             this.showDetails.classList.toggle('active')
         })
     }
-    
+
     /*
     showLenses() {
         for (let i = 0; i < this.product[i].lenses[i].length; i++) {
