@@ -2,11 +2,8 @@
 
 class Products {
     constructor() {
-        this.product
-        this.productDetails = document.getElementById('product-details')
-        this.lenses = document.getElementById('lenses')
-        this.moreDetails = document.getElementById('moreDetails')
-        this.showDetails = document.getElementById('showDetails')
+        this.product;
+        this.productDetails = document.getElementById('product-details');
     }
 
     showProducts() {
@@ -17,10 +14,9 @@ class Products {
             } return response.json()
         })
         .then(data => {
-            this.product = data
-            console.log(this.product)
-            this.getProducts()
-            this.showLenses()
+            this.product = data;
+            console.log(this.product);
+            this.getProducts();
         })
         .catch(error => {
             console.log(error)
@@ -40,12 +36,12 @@ class Products {
                         </h2>
                         <i class="fas fa-plus fa-2x orange-web-hover cursor-pointer transition" id="moreDetails"></i>
                     </div>
-                    <div id="showDetails" class=" transition">
+                    <div id="showDetails" class="hidden transition">
                         <p class="py-2 montserrat lg:w-80">
                             ${this.product[i].description}
                         </p>
                         <label for="Choisir un objectif" class="py-2">
-                            <select name="objectifs" id="lenses">
+                            <select name="objectifs" id="objectif">
                             </select>
                         </label>
                         <div class="flex flex-row justify-between items-center mt-2">
@@ -60,26 +56,26 @@ class Products {
                 </figcaption>
             </figure>
             `
+
+            this.objectif = document.getElementById('objectif');
+            for (let j = 0; j < this.product[i].lenses.length; j++) {
+                this.objectif.innerHTML +=
+                `
+                <option value="${this.product[i].lenses[j]}" class="montserrat">
+                    ${this.product[i].lenses[j]}
+                </option>
+                `
+            }
         }
 
+        this.moreDetails = document.getElementById('moreDetails');
+        this.showDetails = document.getElementById('showDetails');
+        this.moreDetails.addEventListener('click', () => {
+            this.showDetails.classList.toggle('active')
+        })
     }
-    
-    showLenses() {
-        for (let i = 0; i < this.product.lenses[i].length; i++) {
-            this.lenses[i].innerHTML +=
-            `
-            <option value="${this.product.lenses[i]}" class="montserrat">
-                ${this.product.lenses[i]}
-            </option>
-            `
-        }
-    }
-
-    /*
-    toggleDetails() {
-       this.moreDetails.addEventListener('click', () => {
-           this.showDetails.classList.toggle('active')
-       })
-   }
-   */
 }
+
+
+    
+
