@@ -20,7 +20,7 @@ class Products {
             this.product = data
             console.log(this.product)
             this.getProducts()
-            //this.showLenses()
+            this.showLenses()
         })
         .catch(error => {
             console.log(error)
@@ -44,8 +44,8 @@ class Products {
                         <p class="py-2 montserrat lg:w-80">
                             ${this.product[i].description}
                         </p>
-                        <label for="Choisir un objectif" class="py-2" id="lenses">
-                            <select name="objectifs">
+                        <label for="Choisir un objectif" class="py-2">
+                            <select name="objectifs" id="lenses">
                             </select>
                         </label>
                         <div class="flex flex-row justify-between items-center mt-2">
@@ -64,24 +64,22 @@ class Products {
 
     }
     
-    toggleDetails() {
-        this.moreDetails.addEventListener('click', () => {
-            this.showDetails.classList.toggle('active')
-        })
-    }
-
-    /*
     showLenses() {
-        for (let i = 0; i < this.product[i].lenses[i].length; i++) {
+        for (let i = 0; i < this.product.lenses[i].length; i++) {
             this.lenses[i].innerHTML +=
             `
-            <select name="objectifs">
-                <option value="${this.product.lenses[i]}" class="montserrat" selected>
-                    ${this.product.lenses[i]}
-                </option>
-            </select>
+            <option value="${this.product.lenses[i]}" class="montserrat">
+                ${this.product.lenses[i]}
+            </option>
             `
         }
     }
-    */
+
+    /*
+    toggleDetails() {
+       this.moreDetails.addEventListener('click', () => {
+           this.showDetails.classList.toggle('active')
+       })
+   }
+   */
 }

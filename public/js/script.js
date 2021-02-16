@@ -5,4 +5,4 @@ navbar.toggleMenu()
 
 let products = new Products()
 products.showProducts()
-products.toggleDetails()
+//products.toggleDetails()
