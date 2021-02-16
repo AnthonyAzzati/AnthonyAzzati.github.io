@@ -1,7 +1,7 @@
 {
   "name": "orinoco-backend",
   "version": "0.1.0",
-  "description": "",
+  "description": "Projet 5 du parcours Développeur Web OpenClassrooms",
   "main": "server.js",
   "scripts": {},
   "author": "Anthony Azzati",
