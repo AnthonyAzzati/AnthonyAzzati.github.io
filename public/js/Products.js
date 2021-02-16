@@ -40,7 +40,7 @@ class Products {
                         </h2>
                         <i class="fas fa-plus fa-2x orange-web-hover cursor-pointer transition" id="moreDetails"></i>
                     </div>
-                    <div id="showDetails" class="hidden transition">
+                    <div id="showDetails" class=" transition">
                         <p class="py-2 montserrat lg:w-80">
                             ${this.product[i].description}
                         </p>
@@ -52,7 +52,7 @@ class Products {
                             <h3 class="text-xl font-medium merriweather">
                                 ${this.product[i].price/100}€
                             </h3>
-                            <button class="ring-2 ring-black bg-platinum rounded-full p-2 text-sm font-semibold uppercase montserrat hover:bg-black hover:text-white focus:outline-none transition">
+                            <button id="addToCart" class="ring-2 ring-black bg-platinum rounded-full p-2 text-sm font-semibold uppercase montserrat hover:bg-black hover:text-white focus:outline-none transition">
                                 Ajouter au panier
                             </button>
                         </div>
