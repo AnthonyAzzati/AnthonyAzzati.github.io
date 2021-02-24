@@ -65,16 +65,16 @@ class Products {
                 </option>
                 `
             }
-            
-            this.moreDetails = document.getElementsByClassName('moreDetails[i]');
-            this.showDetails = document.getElementsByClassName('showDetails[i]');
-            this.allMoreDetails = this.moreDetails.length;
-            this.allShowDetails = this.showDetails.length;
-            for (let t = 0; t < this.allMoreDetails; t++) {
-                this.moreDetails.addEventListener('click', () => {
-                    this.showDetails.classList.toggle('active')
-                })
-            }
+        }
+
+        this.moreDetails = document.getElementsByClassName('moreDetails[i]');
+        this.showDetails = document.getElementsByClassName('showDetails[i]');
+        this.allMoreDetails = this.moreDetails.length;
+        this.allShowDetails = this.showDetails.length;
+        for (let t = 0; t < this.allMoreDetails; t++) {
+            this.moreDetails.addEventListener('click', () => {
+                this.showDetails.classList.toggle('active');
+            })
         }
     }
 }
