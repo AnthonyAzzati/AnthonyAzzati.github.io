@@ -10,16 +10,15 @@ class Products {
         fetch('//localhost:3000/api/cameras')
         .then(response => {
             if (!response.ok) {
-                throw Error('Error: ', response.status)
-            } return response.json()
+                throw Error('Error: ', response.status);
+            } return response.json();
         })
         .then(data => {
             this.product = data;
-            console.log(this.product);
             this.getProducts();
         })
         .catch(error => {
-            console.log(error)
+            console.log(error);
         })
     }
 
@@ -34,14 +33,14 @@ class Products {
                         <h2 class="text-2xl pt-2 montserrat">
                             ${this.product[i].name}
                         </h2>
-                        <i class="fas fa-plus fa-2x orange-web-hover cursor-pointer transition" id="moreDetails"></i>
+                        <i class="moreDetails${[i]} fas fa-plus fa-2x orange-web-hover cursor-pointer transition" id=""></i>
                     </div>
-                    <div id="showDetails" class="hidden transition">
+                    <div id="" class="showDetails${[i]} ">
                         <p class="py-2 montserrat lg:w-80">
                             ${this.product[i].description}
                         </p>
                         <label for="Choisir un objectif" class="py-2">
-                            <select name="objectifs" id="objectif">
+                            <select name="objectifs" class="objectif${[i]}" id="">
                             </select>
                         </label>
                         <div class="flex flex-row justify-between items-center mt-2">
@@ -56,23 +55,27 @@ class Products {
                 </figcaption>
             </figure>
             `
-
-            this.objectif = document.getElementById('objectif');
+            
             for (let j = 0; j < this.product[i].lenses.length; j++) {
-                this.objectif.innerHTML +=
+                this.lenses = document.getElementsByClassName('objectif[i]');
+                this.lenses.innerHTML +=
                 `
                 <option value="${this.product[i].lenses[j]}" class="montserrat">
                     ${this.product[i].lenses[j]}
                 </option>
                 `
             }
+            
+            this.moreDetails = document.getElementsByClassName('moreDetails[i]');
+            this.showDetails = document.getElementsByClassName('showDetails[i]');
+            this.allMoreDetails = this.moreDetails.length;
+            this.allShowDetails = this.showDetails.length;
+            for (let t = 0; t < this.allMoreDetails; t++) {
+                this.moreDetails.addEventListener('click', () => {
+                    this.showDetails.classList.toggle('active')
+                })
+            }
         }
-
-        this.moreDetails = document.getElementById('moreDetails');
-        this.showDetails = document.getElementById('showDetails');
-        this.moreDetails.addEventListener('click', () => {
-            this.showDetails.classList.toggle('active')
-        })
     }
 }
 

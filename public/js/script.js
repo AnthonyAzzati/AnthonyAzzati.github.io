@@ -1,7 +1,7 @@
 "use strict"
 
-let navbar = new Navbar()
-navbar.toggleMenu()
+let navbar = new Navbar();
+navbar.toggleMenu();
 
-let products = new Products()
-products.showProducts()
+let products = new Products();
+products.showProducts();
