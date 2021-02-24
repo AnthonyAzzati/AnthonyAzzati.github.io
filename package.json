@@ -1,11 +1,11 @@
 {
   "name": "orinoco-backend",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Projet 5 du parcours Développeur Web OpenClassrooms",
   "main": "server.js",
   "scripts": {},
-  "author": "",
-  "license": "ISC",
+  "author": "Anthony Azzati",
+  "license": "Apache License 2.0",
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "bcrypt": "^5.0.0",
