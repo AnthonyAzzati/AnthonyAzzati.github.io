@@ -8,24 +8,25 @@ class Products {
 
     showProducts() {
         fetch('//localhost:3000/api/cameras')
-        .then(response => {
-            if (!response.ok) {
-                throw Error('Error: ', response.status);
-            } return response.json();
-        })
-        .then(data => {
-            this.product = data;
-            this.getProducts();
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(response => {
+                if (!response.ok) {
+                    throw Error('Error: ', response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                this.product = data;
+                this.getProducts();
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     getProducts() {
         for (let i = 0; i < this.product.length; i++) {
             this.productDetails.innerHTML +=
-            `
+                `
             <figure class="flex flex-col rounded-md bg-white shadow-md m-4 p-4  md:flex-row md:mx-4">
                 <img src="${this.product[i].imageUrl}" class="w-80 h-auto object-cover rounded-md" alt="${this.product[i].name} ${this.product[i].description}">
                 <figcaption class="flex flex-col md:ml-4">
@@ -55,11 +56,11 @@ class Products {
                 </figcaption>
             </figure>
             `
-            
+
             for (let j = 0; j < this.product[i].lenses.length; j++) {
                 this.lenses = document.getElementsByClassName('objectif[i]');
                 this.lenses.innerHTML +=
-                `
+                    `
                 <option value="${this.product[i].lenses[j]}" class="montserrat">
                     ${this.product[i].lenses[j]}
                 </option>
@@ -77,8 +78,27 @@ class Products {
             })
         }
     }
+
+    addToCart() {
+        this.addToCartBtn = document.getElementById('addToCart');
+        console.log(this.addToCartBtn);
+        this.addToCartBtn.addEventListener('click', () => {
+            let cartItems = [];
+            const localStorageContent = localStorage.getItem('cart');
+            if (localStorageContent === null) {
+                cartItems = [];
+            } else {
+                cartItems = JSON.parse(localStorageContent);
+            }
+            let singleProduct = {
+                imageUrl: this.product.imageUrl,
+                price: this.product.price,
+                name: this.product.name,
+                productId: this.product._id,
+                quantity: 1
+            };
+            cartItems.push(singleProduct);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        });
+    }
 }
-
-
-    
-
