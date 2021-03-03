@@ -80,25 +80,6 @@ class Products {
     }
 
     addToCart() {
-        this.addToCartBtn = document.getElementById('addToCart');
-        console.log(this.addToCartBtn);
-        this.addToCartBtn.addEventListener('click', () => {
-            let cartItems = [];
-            const localStorageContent = localStorage.getItem('cart');
-            if (localStorageContent === null) {
-                cartItems = [];
-            } else {
-                cartItems = JSON.parse(localStorageContent);
-            }
-            let singleProduct = {
-                imageUrl: this.product.imageUrl,
-                price: this.product.price,
-                name: this.product.name,
-                productId: this.product._id,
-                quantity: 1
-            };
-            cartItems.push(singleProduct);
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-        });
+        
     }
 }

@@ -5,7 +5,5 @@ class Cart {
 
     }
 
-    addToCart() {
-        
-    }
+    
 }
