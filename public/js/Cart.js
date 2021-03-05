@@ -19,8 +19,14 @@ class Cart {
         cart = JSON.parse(localStorage.getItem("cart"));
         console.log(cart);
 
-        const cartProducts = cart.map((camera) => {
-            return `
+        if (cart === null) {
+            this.cartProducts.innerHTML = `
+                <h2 class="my-8 montserrat text-2xl">Aucun produit dans votre panier</h2>
+            `;
+            this.trashBtn.remove();
+        } else {
+            const cartAllProducts = cart.map((camera) => {
+                return `
             <hr class="mt-4" />
             <figure
                 class="flex flex-col lg:flex-row rounded-md mt-4 p-4 w-1/1 lg:m-4"
@@ -57,9 +63,9 @@ class Cart {
                 </figcaption>
             </figure>
             `;
-        });
-        cartProducts.join("");
-        this.cartProducts.insertAdjacentHTML("afterbegin", cartProducts);
+            });
+            this.cartProducts.insertAdjacentHTML("afterbegin", cartAllProducts);
+        }
     }
 
     totalCartPrice() {
