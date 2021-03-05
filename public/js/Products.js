@@ -32,8 +32,8 @@ class AllProducts {
                                         ${camera.price / 100} €
                                     </h3>
                                     <div class="flex self-center text-center align-middle rounded-full ring-2 ring-black text-black hover:bg-white hover:text-black animate-pulse transition w-auto my-4 p-2">
-                                        <a href="../views/nos-produits.html?id${camera._id}" 
-                                            <button class="uppercase montserrat font-bold">Voir le produit</button>
+                                        <a href="../views/nos-produits.html?id${camera._id}"> 
+                                            <span class="uppercase montserrat font-bold">Voir le produit</span>
                                         </a>
                                     </div>
                                 </div>
@@ -50,4 +50,6 @@ class AllProducts {
                 console.log(error);
             });
     }
+
+    
 }

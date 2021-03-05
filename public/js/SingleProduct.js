@@ -2,7 +2,6 @@
 
 class SingleProduct {
     constructor() {
-        
     }
 
     getProductData() {
@@ -51,10 +50,27 @@ class SingleProduct {
                 // Ajout du prix du produit
                 let productPrice = document.querySelector("#product-price");
                 productPrice.innerHTML = data.price / 100 + " €";
+
+
+                let cart = [];
+
+                let productMap = {
+                    productName: data.name,
+                    productPrice: data.price,
+                    productId: data._id,
+                };
+        
+                let productMapStringify = JSON.stringify(productMap);
+        
+                let addToCartBtn = document.getElementById("addToCart-btn");
+                addToCartBtn.addEventListener("click", function(event){
+                    event.preventDefault();
+                    productMap.push(cart);
+                    localStorage.setItem("productMap", cart);
+                });
             })
             .catch(error => {
                 console.log(error);
             });
     }
-
 }
