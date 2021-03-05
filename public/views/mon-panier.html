@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="../styles/style.css">
 </head>
@@ -55,10 +55,10 @@
                 <figure class="flex flex-col lg:flex-row rounded-md mt-4 p-4 w-1/1 lg:m-4">
                     <img src="../../images/vcam_5.jpg" class="w-80 h-auto object-cover rounded-md" alt="Photo d'une caméra vintage de la marque Zeiss">
                     <figcaption class="flex flex-col lg:justify-between lg:pl-4 w-full">
-                        <h2 class="text-2xl pt-2 montserrat">
+                        <h2 class="text-2xl pt-2 montserrat" id="product-name">
                             Katatone
                         </h2>
-                        <p>
+                        <p id="product-lens">
                             28-200mm 2.8/4.5
                         </p>
                         <label>
@@ -66,7 +66,7 @@
                             <input class="rounded text-lg merriweather" type="number" step="1" id="quantity" value="1" min="1" max="99" required>
                         </label>
                         <div class="flex flex-row justify-between items-center mt-2">
-                            <h3 class="text-xl font-medium merriweather">
+                            <h3 class="text-xl font-medium merriweather" id="product-price">
                                 599.00€
                             </h3>
                             <button>
