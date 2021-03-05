@@ -2,4 +2,6 @@
 
 class Cart {
     constructor() {}
+
+    getProducts() {}
 }

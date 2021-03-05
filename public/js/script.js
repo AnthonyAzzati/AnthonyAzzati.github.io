@@ -8,3 +8,6 @@ products.productsData();
 
 let singleProduct = new SingleProduct();
 singleProduct.getProductData();
+
+let cart = new Cart();
+cart.getProducts();
