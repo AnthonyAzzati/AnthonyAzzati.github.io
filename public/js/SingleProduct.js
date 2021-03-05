@@ -26,8 +26,8 @@ class SingleProduct {
                 let imageElement = document.querySelector("#figure");
                 imageElement.insertAdjacentHTML("afterbegin",
                     `
-                <img src="${data.imageUrl}" class="w-80 h-auto object-cover rounded-md" alt="" id="product-image">
-                `)
+                        <img src="${data.imageUrl}" class="w-80 h-auto object-cover rounded-md" alt="" id="product-image">
+                    `)
 
                 // Ajout du nom du produit
                 let productName = document.querySelector("h2");
