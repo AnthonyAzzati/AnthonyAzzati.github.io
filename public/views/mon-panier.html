@@ -66,67 +66,31 @@
             </header>
         </div>
 
-        <div class="flex flex-col md:flex-row md:h-screen">
+        <div class="flex flex-col md:flex-row">
             <div class="container w-full md:w-1/2 lg:w-2/3">
                 <div class="flex flex-col bg-white rounded m-4 p-4 shadow-md">
                     <p class="uppercase text-2xl font-bold montserrat">
                         Mon panier
                     </p>
-                    <hr class="mt-4" />
-                    <figure
-                        class="flex flex-col lg:flex-row rounded-md mt-4 p-4 w-1/1 lg:m-4"
-                        id="#product-image"
-                    >
-                        <img
-                            src="../../images/vcam_5.jpg"
-                            class="w-80 h-auto object-cover rounded-md"
-                            alt="Photo d'une caméra vintage de la marque Zeiss"
-                        />
-                        <figcaption
-                            class="flex flex-col lg:justify-between lg:pl-4 w-full"
-                        >
-                            <h2
-                                class="text-2xl pt-2 montserrat"
-                                id="product-name"
-                            >
-                                Katatone
-                            </h2>
-                            <p id="product-lens">28-200mm 2.8/4.5</p>
-                            <label>
-                                <span class="montserrat">Qté</span>
-                                <input
-                                    class="rounded text-lg merriweather"
-                                    type="number"
-                                    step="1"
-                                    id="quantity"
-                                    value="1"
-                                    min="1"
-                                    max="99"
-                                    required
-                                />
-                            </label>
-                            <div
-                                class="flex flex-row justify-between items-center mt-2"
-                            >
-                                <h3
-                                    class="text-xl font-medium merriweather"
-                                    id="product-price"
-                                >
-                                    599.00€
-                                </h3>
-                                <button id="trash-btn">
-                                    <i
-                                        class="far fa-trash-alt fa-2x text-gray-600 hover:text-yellow-500 transition focus:border-none"
-                                    ></i>
-                                </button>
-                            </div>
-                        </figcaption>
-                    </figure>
+
+                    <div id="cart-products"></div>
+
+                    <div class="self-end">
+                        <button id="trash-btn">
+                            <i
+                                class="far fa-trash-alt fa-2x text-gray-600 hover:text-yellow-500 transition focus:border-none"
+                            ></i>
+                        </button>
+                    </div>
+
                     <section class="flex flex-row justify-between pt-4">
                         <h4 class="uppercase montserrat font-bold text-xl">
                             Sous-total
                         </h4>
-                        <p class="merriweather text-xl font-medium">599.00€</p>
+                        <p
+                            class="merriweather text-xl font-medium"
+                            id="cart-total"
+                        ></p>
                     </section>
                 </div>
             </div>

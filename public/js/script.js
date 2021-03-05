@@ -11,3 +11,5 @@ singleProduct.getProductData();
 
 let cart = new Cart();
 cart.getProducts();
+cart.totalCartPrice();
+cart.clearCart();
