@@ -1,7 +1,10 @@
-"use strict"
+"use strict";
 
 let navbar = new Navbar();
 navbar.toggleMenu();
 
-let products = new Products();
-products.showProducts();
+let products = new AllProducts();
+products.productsData();
+
+let singleProduct = new SingleProduct();
+singleProduct.getProductData();
