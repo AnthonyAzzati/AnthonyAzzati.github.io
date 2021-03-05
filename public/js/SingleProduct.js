@@ -64,6 +64,7 @@ class SingleProduct {
                         productPrice: data.price,
                         productId: data._id,
                         productLens: chosenLens,
+                        productImage: data.imageUrl,
                     };
 
                     if (localStorage.getItem("cart") === null) {
