@@ -39,13 +39,10 @@ class Cart {
                     <label>
                         <span class="montserrat">Qté</span>
                         <input
-                            class="rounded text-lg merriweather"
+                            class="rounded text-lg merriweather pl-2"
                             type="number"
-                            step="1"
                             id="quantity"
                             value="1"
-                            min="1"
-                            max="99"
                             required
                         />
                     </label>
@@ -61,16 +58,15 @@ class Cart {
             </figure>
             `;
         });
+        cartProducts.join("");
         this.cartProducts.insertAdjacentHTML("afterbegin", cartProducts);
     }
 
     totalCartPrice() {
         let cart;
-        cart = JSON.parse(localStorage.getItem("cart"));
-
-        let totalPrice = [];
-
         let finalTotalPrice;
+        cart = JSON.parse(localStorage.getItem("cart"));
+        let totalPrice = [];
 
         cart.forEach((product) => {
             finalTotalPrice = totalPrice.push(product.productPrice);
