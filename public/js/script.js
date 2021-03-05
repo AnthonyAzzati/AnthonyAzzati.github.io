@@ -3,6 +3,8 @@
 let navbar = new Navbar();
 navbar.toggleMenu();
 
-let products = new Products();
-products.showProducts();
-products.addToCart();
+let products = new AllProducts();
+products.productsData();
+
+let singleProduct = new SingleProduct();
+singleProduct.getProductData();
