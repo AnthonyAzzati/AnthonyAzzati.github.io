@@ -80,6 +80,7 @@ class SingleProduct {
                 addToCartBtn.addEventListener("click", function (event) {
                     event.preventDefault();
                     addToLocalStorage();
+                    alert("Votre produit a été ajouté au panier");
                 });
             })
             .catch((error) => {
