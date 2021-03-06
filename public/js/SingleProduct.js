@@ -64,6 +64,7 @@ class SingleProduct {
                         productPrice: data.price,
                         productId: data._id,
                         productLens: chosenLens,
+                        productImage: data.imageUrl,
                     };
 
                     if (localStorage.getItem("cart") === null) {
@@ -79,6 +80,7 @@ class SingleProduct {
                 addToCartBtn.addEventListener("click", function (event) {
                     event.preventDefault();
                     addToLocalStorage();
+                    alert("Votre produit a été ajouté au panier");
                 });
             })
             .catch((error) => {
