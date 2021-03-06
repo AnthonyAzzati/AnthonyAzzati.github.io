@@ -26,6 +26,10 @@
     color: #fca311;
 }
 
+.orange-web-hover:hover {
+    color: #fca311;
+}
+
 .active {
     display: block;
 }   
