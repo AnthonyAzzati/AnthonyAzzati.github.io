@@ -41,7 +41,7 @@ class Cart {
                     <h2 class="text-2xl pt-2 montserrat" id="product-name">
                         ${camera.productName}
                     </h2>
-                    <p id="product-lens">28-200mm 2.8/4.5</p>
+                    <p id="product-lens">${camera.productLens}</p>
                     <label>
                         <span class="montserrat">Qté</span>
                         <input
