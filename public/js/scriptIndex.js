@@ -5,3 +5,6 @@ navbar.toggleMenu();
 
 let products = new AllProducts();
 products.productsData();
+
+let cart = new Cart();
+cart.showQtyCart();

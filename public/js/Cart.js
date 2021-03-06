@@ -48,6 +48,8 @@ class Cart {
                             class="rounded text-lg merriweather pl-2"
                             type="number"
                             id="quantity"
+                            min="1"
+                            max="1"
                             value="1"
                             required
                         />
@@ -92,5 +94,33 @@ class Cart {
             localStorage.clear();
             location.reload();
         });
+    }
+
+    showQtyCart() {
+        let cartQty = document.getElementById("cart-qty");
+        let cart;
+        cart = JSON.parse(localStorage.getItem("cart"));
+        if (cart.length != null && cart.length > 0) {
+            cartQty.innerHTML = `
+            ${cart.length}  
+            `;
+            cartQty.classList.add(
+                "absolute",
+                "flex",
+                "items-center",
+                "justify-center",
+                "-top-3",
+                "-right-3",
+                "rounded-full",
+                "w-5",
+                "h-5",
+                "bg-orange-web",
+                "montserrat",
+                "text-sm",
+                "font-medium"
+            );
+        } else {
+            cartQty.remove();
+        }
     }
 }
