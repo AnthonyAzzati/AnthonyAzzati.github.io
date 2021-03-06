@@ -1,117 +1,164 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Votre commande | ORINOCAM</title>
+        <title>Votre commande | ORINOCAM</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../styles/style.css">
-</head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="../styles/style.css" />
+    </head>
 
-<body>
-    <div class="flex flex-col bg-platinum">
-        <header class="container mx-auto p-3 merriweather oxford font-medium">
-            <nav class="flex flex-col md:flex-row md:justify-between">
-                <div class="flex flex-row justify-between">
-                    <a href="../index.html" class="my-auto w-auto uppercase text-2xl montserrat cursor-pointer hover:text-yellow-500 transition">Orinocam</a>
-                    <p id="menuBtn" class="md:hidden">
-                        <i class="fas fa-bars fa-2x cursor-pointer"></i>
+    <body>
+        <div class="flex flex-col bg-platinum">
+            <header
+                class="container mx-auto p-3 merriweather oxford font-medium"
+            >
+                <nav class="flex flex-col md:flex-row md:justify-between">
+                    <div class="flex flex-row justify-between">
+                        <a
+                            href="../index.html"
+                            class="my-auto w-auto uppercase text-2xl montserrat cursor-pointer hover:text-yellow-500 transition"
+                            >Orinocam</a
+                        >
+                        <p id="menuBtn" class="md:hidden">
+                            <i class="fas fa-bars fa-2x cursor-pointer"></i>
+                        </p>
+                    </div>
+                    <ul
+                        class="hidden md:flex md:flex-row text-center transition"
+                        id="mobileMenu"
+                    >
+                        <li
+                            class="py-2 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition"
+                        >
+                            <a href="../index.html"> Accueil </a>
+                        </li>
+                        <li
+                            class="py-2 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition"
+                        >
+                            <a href="../index.html"> Nos produits </a>
+                        </li>
+                        <li
+                            class="py-2 md:pr-5 uppercase text-l group cursor-pointer hover:text-yellow-500 transition"
+                        >
+                            <a href="#">
+                                <i
+                                    class="relative group-hover:text-yellow-500 fas fa-shopping-cart transition"
+                                    ><div
+                                        id="cart-qty"
+                                        class="group-hover:text-white transition"
+                                    ></div
+                                ></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="flex flex-col bg-gray-100 h-screen montserrat">
+            <div
+                class="container bg-white rounded shadow-2xl text-center my-auto p-4 mx-auto"
+            >
+                <h1 class="my-16 text-xl uppercase font-semibold">
+                    Merci pour votre commande !
+                </h1>
+                <h2 class="my-16">
+                    Votre commande sera bientôt préparée par nos équipes, voici
+                    votre numéro de commande
+                </h2>
+                <h3 class="my-16">
+                    Commande n°
+                    <span
+                        id="orderNumber"
+                        class="uppercase font-semibold orange-web"
+                        >pazopdaz355ad48a9zd452</span
+                    >
+                </h3>
+            </div>
+        </div>
+
+        <footer class="bg-oxford">
+            <div
+                class="container mx-auto p-4 montserrat platinum text-xs md:flex-row md:justify-around"
+            >
+                <div class="flex flex-col md:text-center">
+                    <ul
+                        class="uppercase flex flex-col lg:flex-row md:justify-center"
+                    >
+                        <li
+                            class="pb-1 hover:text-yellow-500 transition lg:mr-4"
+                        >
+                            <a href="./views/nos-produits.html">
+                                Découvrez nos produits
+                            </a>
+                        </li>
+                        <li
+                            class="pb-1 hover:text-yellow-500 transition lg:mr-4"
+                        >
+                            <a href="#"> Conditions générales de vente </a>
+                        </li>
+                        <li
+                            class="pb-1 hover:text-yellow-500 transition lg:mr-4"
+                        >
+                            <a href="#"> Politique de confidentialité </a>
+                        </li>
+                        <li
+                            class="pb-1 hover:text-yellow-500 transition lg:mr-4"
+                        >
+                            <a href="#"> FAQ </a>
+                        </li>
+                        <li class="pb-1 hover:text-yellow-500 transition">
+                            <a href="#"> Contactez-nous </a>
+                        </li>
+                    </ul>
+
+                    <div class="py-2 md:py-4">
+                        <h3 class="mb-2">Suivez-nous sur nos réseaux !</h3>
+                        <a href="#">
+                            <i
+                                class="fab fa-facebook-square fa-2x mr-2 hover:text-yellow-500 transition"
+                            ></i>
+                        </a>
+                        <a href="#">
+                            <i
+                                class="fab fa-twitter-square fa-2x mr-2 hover:text-yellow-500 transition"
+                            ></i>
+                        </a>
+                        <a href="#">
+                            <i
+                                class="fab fa-instagram-square fa-2x hover:text-yellow-500 transition"
+                            ></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex pt-2 md:justify-center">
+                    <p class="">
+                        <span class="uppercase">Orinocam</span> | © 2021 Tous
+                        droits réservés
                     </p>
                 </div>
-                <ul class="hidden md:flex md:flex-row text-center transition" id="mobileMenu">
-                    <li class="py-2 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition">
-                        <a href="../index.html">
-                            Accueil
-                        </a>
-                    </li>
-                    <li class="py-2 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition">
-                        <a href="./nos-produits.html">
-                            Nos produits
-                        </a>
-                    </li>
-                    <li class="py-2 md:pr-5 uppercase text-l cursor-pointer hover:text-yellow-500 transition">
-                        <a href="#">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    </div>
-
-    <div class="flex flex-col bg-gray-100 h-screen montserrat">
-        <div class="container bg-white rounded shadow-2xl text-center my-auto p-4 mx-auto">
-            <h1 class="my-16 text-xl uppercase font-semibold">
-                Merci pour votre commande !
-            </h1>
-            <h2 class="my-16">
-                Votre commande sera bientôt préparée par nos équipes, voici votre numéro de commande
-            </h2>
-            <h3 class="my-16">
-                Commande n° <span id="orderNumber" class="uppercase font-semibold orange-web">pazopdaz355ad48a9zd452</span>
-            </h3>
-        </div>
-    </div>
-
-    <footer class="bg-oxford">
-        <div class="container mx-auto p-4 montserrat platinum text-xs md:flex-row md:justify-around">
-            <div class="flex flex-col md:text-center">
-                <ul class="uppercase flex flex-col lg:flex-row md:justify-center">
-                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
-                        <a href="./views/nos-produits.html">
-                            Découvrez nos produits
-                        </a>
-                    </li>
-                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
-                        <a href="#">
-                            Conditions générales de vente
-                        </a>
-                    </li>
-                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
-                        <a href="#">
-                            Politique de confidentialité
-                        </a>
-                    </li>
-                    <li class="pb-1 hover:text-yellow-500 transition lg:mr-4">
-                        <a href="#">
-                            FAQ
-                        </a>
-                    </li>
-                    <li class="pb-1 hover:text-yellow-500 transition">
-                        <a href="#">
-                            Contactez-nous
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="py-2 md:py-4">
-                    <h3 class="mb-2">Suivez-nous sur nos réseaux !</h3>
-                    <a href="#">
-                        <i class="fab fa-facebook-square fa-2x mr-2 hover:text-yellow-500 transition"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-twitter-square fa-2x mr-2 hover:text-yellow-500 transition"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fab fa-instagram-square fa-2x hover:text-yellow-500 transition"></i>
-                    </a>
-                </div>
             </div>
-            <div class="flex pt-2 md:justify-center">
-                <p class="">
-                    <span class="uppercase">Orinocam</span> | © 2021 Tous droits réservés
-                </p>
-            </div>
-        </div>
-    </footer>
-        
-    <script src="../js/Navbar.js"></script>    
-    <script src="../js/Products.js"></script>
-    <script src="../js/script.js"></script>
-</body>
+        </footer>
+
+        <script src="../js/Navbar.js"></script>
+        <script src="../js/Products.js"></script>
+        <script src="../js/script.js"></script>
+    </body>
 </html>
