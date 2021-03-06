@@ -15,3 +15,6 @@ cart.showQtyCart();
 cart.totalCartPrice();
 cart.removeProduct();
 cart.clearCart();
+
+let form = new Form();
+form.submitForm();
