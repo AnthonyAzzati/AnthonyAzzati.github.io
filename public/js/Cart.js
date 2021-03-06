@@ -61,6 +61,13 @@ class Cart {
                         >
                             ${camera.productPrice / 100} €
                         </h3>
+                        <div class="self-end">
+                        <button id="trash-btn">
+                            <i
+                                class="far fa-trash-alt fa-2x text-gray-600 hover:text-yellow-500 transition focus:border-none"
+                            ></i>
+                        </button>
+                    </div>
                     </div>
                 </figcaption>
             </figure>
@@ -88,6 +95,8 @@ class Cart {
         cartTotal.innerText = finalTotalPrice / 100 + " €";
     }
 
+    removeProduct() {}
+
     clearCart() {
         this.trashBtn.addEventListener("click", function (event) {
             event.preventDefault();
@@ -100,7 +109,7 @@ class Cart {
         let cartQty = document.getElementById("cart-qty");
         let cart;
         cart = JSON.parse(localStorage.getItem("cart"));
-        if (cart.length != null && cart.length > 0) {
+        if (cart.length > 0) {
             cartQty.innerHTML = `
             ${cart.length}  
             `;

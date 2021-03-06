@@ -13,4 +13,5 @@ let cart = new Cart();
 cart.getProducts();
 cart.showQtyCart();
 cart.totalCartPrice();
+cart.removeProduct();
 cart.clearCart();
