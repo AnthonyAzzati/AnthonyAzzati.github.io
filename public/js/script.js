@@ -17,4 +17,6 @@ cart.removeProduct();
 cart.clearCart();
 
 let form = new Form();
+//form.invalidForm();
+//form.validForm();
 form.submitForm();

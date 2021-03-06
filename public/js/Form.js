@@ -1,7 +1,9 @@
 "use strict";
 
 class Form {
-    constructor() {}
+    constructor() {
+        this.form = document.querySelector("#form");
+    }
 
     submitForm() {}
 }
