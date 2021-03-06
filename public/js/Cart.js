@@ -19,7 +19,7 @@ class Cart {
         cart = JSON.parse(localStorage.getItem("cart"));
         console.log(cart);
 
-        if (cart === null) {
+        if (cart == 0) {
             this.cartProducts.innerHTML = `
                 <h2 class="my-8 montserrat text-2xl">Aucun produit dans votre panier</h2>
             `;
