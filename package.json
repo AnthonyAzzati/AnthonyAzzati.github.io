@@ -1,6 +1,6 @@
 {
   "name": "orinoco-backend",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Projet 5 du parcours Développeur Web OpenClassrooms",
   "main": "server.js",
   "scripts": {},
