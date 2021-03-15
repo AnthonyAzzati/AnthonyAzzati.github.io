@@ -19,9 +19,6 @@ class Form {
      */
 
     this.formSubmitBtn.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-
       /**
        ** Déclaration des constantes
        */
@@ -32,48 +29,54 @@ class Form {
       const email = document.getElementById("email");
 
       /**
-       ** Création de l'objet 'contact'
+       ** Permet de vérifier que tout les champs sont remplis et conformes
        */
-      let contact = {
-        firstName: firstName.value,
-        lastName: lastName.value,
-        address: address.value,
-        city: city.value,
-        email: email.value,
-      };
-
-      /**
-       ** Création de l'array 'products' permettant de
-       ** récupérer l'ID des produits
-       ** présents dans le panier
-       */
-      let products = [];
-
-      let cart;
-      cart = JSON.parse(localStorage.getItem("cart"));
-      for (let i = 0; i < cart.length; i++) {
-        products.push(cart[i].productId);
-      }
-
-      /**
-       ** Création d'un objet 'order' contenant
-       ** l'objet 'contact' et l'array 'products
-       */
-      let order = {
-        contact,
-        products,
-      };
-
-      console.log(order);
-
       if (
-        contact.firstName != null ||
-        contact.lastName != null ||
-        contact.address != null ||
-        contact.city != null ||
-        contact.email != null ||
-        products != null
+        !firstName.value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/) ||
+        !lastName.value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/) ||
+        !address.value.match(
+          /^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$/
+        ) ||
+        !city.value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/) ||
+        !email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
       ) {
+        alert(
+          "Tous les champs doivent être remplis avec des informations conformes et valides afin de confirmer votre commande."
+        );
+      } else {
+        /**
+         ** Création de l'objet 'contact'
+         */
+        let contact = {
+          firstName: firstName.value,
+          lastName: lastName.value,
+          address: address.value,
+          city: city.value,
+          email: email.value,
+        };
+
+        /**
+         ** Création de l'array 'products' permettant de
+         ** récupérer l'ID des produits
+         ** présents dans le panier
+         */
+        let products = [];
+
+        let cart;
+        cart = JSON.parse(localStorage.getItem("cart"));
+        for (let i = 0; i < cart.length; i++) {
+          products.push(cart[i].productId);
+        }
+
+        /**
+         ** Création d'un objet 'order' contenant
+         ** l'objet 'contact' et l'array 'products
+         */
+        let order = {
+          contact,
+          products,
+        };
+
         fetch("http://localhost:3000/api/cameras/order", {
           method: "POST",
           body: JSON.stringify(order),
@@ -91,7 +94,15 @@ class Form {
           .catch((error) => {
             console.log(error);
           });
+
+        /**
+         ** Permet de vider les produits stockés dans le localStorage
+         */
+        localStorage.clear();
       }
+
+      event.preventDefault();
+      event.stopPropagation();
     });
   }
 }
