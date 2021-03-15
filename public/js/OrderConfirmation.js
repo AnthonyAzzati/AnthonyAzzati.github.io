@@ -8,6 +8,9 @@ class OrderConfirmation {
   showOrderId() {
     const order = JSON.parse(localStorage.getItem("order"));
     const orderId = order.orderId;
+
     this.orderNumber.innerHTML = orderId;
+
+    localStorage.clear();
   }
 }
