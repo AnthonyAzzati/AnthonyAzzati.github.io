@@ -3,11 +3,6 @@
 class Form {
   constructor() {
     this.formSubmitBtn = document.getElementById("order-btn");
-    this.firstName = document.getElementById("firstname");
-    this.lastName = document.getElementById("lastname");
-    this.address = document.getElementById("address");
-    this.city = document.getElementById("city");
-    this.email = document.getElementById("email");
   }
 
   submitForm() {
