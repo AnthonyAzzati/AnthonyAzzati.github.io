@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .montserrat{
     font-family: 'Montserrat', sans-serif;
 }
