@@ -44,18 +44,7 @@ class Cart {
                         ${camera.productName}
                     </h2> 
                     <p id="product-lens">${camera.productLens}</p>
-                    <label>
-                        <span class="montserrat">Qté</span>
-                        <input
-                            class="rounded text-lg merriweather pl-2"
-                            type="number"
-                            id="quantity"
-                            min="1"
-                            max="1"
-                            value="1"
-                            required
-                        />
-                    </label>
+                    
                     <div class="flex flex-row justify-between items-center mt-2">
                         <h3
                             class="text-xl font-medium merriweather"
