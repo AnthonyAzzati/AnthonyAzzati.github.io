@@ -12,9 +12,9 @@ class Cart {
 
   getProducts() {
     /*
-     *On récupère les données du LocalStorage
-     * et on les transforme en objet afin
-     * de pouvoir les utiliser
+     **On récupère les données du LocalStorage
+     ** et on les transforme en objet afin
+     ** de pouvoir les utiliser
      */
     let cart;
     cart = JSON.parse(localStorage.getItem("cart"));
@@ -69,6 +69,7 @@ class Cart {
     }
   }
 
+  // Calcul du prix total du panier
   totalCartPrice() {
     let cart;
     let finalTotalPrice;
@@ -86,6 +87,7 @@ class Cart {
     cartTotal.innerText = finalTotalPrice / 100 + " €";
   }
 
+  // Permet de supprimer du panier le produit sélectionné
   removeProduct() {
     let clearBtn = document.querySelectorAll("#clear-btn");
     let cart;
@@ -104,6 +106,7 @@ class Cart {
     }
   }
 
+  // Supprime tout les produits du panier
   clearCart() {
     this.trashBtn.addEventListener("click", function (event) {
       event.preventDefault();
@@ -112,6 +115,7 @@ class Cart {
     });
   }
 
+  // Permet d'afficher dans la barre de navigation la quantité de produits dans le panier
   showQtyCart() {
     let cartQty = document.getElementById("cart-qty");
     let cart;
