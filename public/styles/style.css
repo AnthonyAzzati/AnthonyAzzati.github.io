@@ -1,3 +1,5 @@
+/* !Permet d'écraser certaines spécifications de TailwindCSS */
+
 html {
     scroll-behavior: smooth;
 }

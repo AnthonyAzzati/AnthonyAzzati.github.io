@@ -3,6 +3,10 @@
 class SingleProduct {
   constructor() {}
 
+  /**
+   * Permet de récupérer dynamiquement les données du
+   * produit sélectionné par l'utilisateur
+   */
   getProductData() {
     // URL de l'API
     const url = "http://localhost:3000/api/cameras";
@@ -12,6 +16,8 @@ class SingleProduct {
     research = research.replace("?id", "/");
 
     const singleUrl = url + research;
+
+    // Appel à l'API sur l'URL du produit sélectionné
     fetch(singleUrl)
       .then((response) => {
         if (!response.ok) {
@@ -54,6 +60,10 @@ class SingleProduct {
         let productPrice = document.querySelector("#product-price");
         productPrice.innerHTML = data.price / 100 + " €";
 
+        /**
+         * Au click sur le bouton permet de stocker
+         * les produits dans le localStorage
+         */
         function addToLocalStorage() {
           let cart;
           let chosenLens = productLens.value;

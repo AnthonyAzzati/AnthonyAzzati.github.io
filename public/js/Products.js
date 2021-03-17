@@ -3,6 +3,10 @@
 class AllProducts {
     constructor() {}
 
+    /**
+     * Permet de récupérer les produits de l'API et
+     * de les afficher
+     */
     productsData() {
         fetch("http://localhost:3000/api/cameras")
             .then((response) => {
